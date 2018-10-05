@@ -42,7 +42,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(UIViewController(), animated: true)
+        navigationController?.pushViewController(DetailViewController(), animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
