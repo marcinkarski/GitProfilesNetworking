@@ -9,7 +9,7 @@ enum Result<T> {
     case failure(Error)
 }
 
-final class APIService {
+class APIService {
     private let session: URLSession
     init(configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
         self.session = URLSession(configuration: configuration)

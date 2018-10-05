@@ -14,6 +14,7 @@
 		2E92C55D2167E1A9003CA1E2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C55C2167E1A9003CA1E2 /* Profile.swift */; };
 		2E92C55F2167E1F3003CA1E2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C55E2167E1F3003CA1E2 /* Repository.swift */; };
 		2E92C5612167E2D6003CA1E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */; };
+		2E92C5632167E57A003CA1E2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5622167E57A003CA1E2 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2E92C55C2167E1A9003CA1E2 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2E92C55E2167E1F3003CA1E2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2E92C5622167E57A003CA1E2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				2E92C5482167CF67003CA1E2 /* AppDelegate.swift */,
 				2E92C54A2167CF67003CA1E2 /* ViewController.swift */,
 				2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */,
+				2E92C5622167E57A003CA1E2 /* ProfileView.swift */,
 				2E92C55A2167D8F6003CA1E2 /* APIService.swift */,
 				2E92C55C2167E1A9003CA1E2 /* Profile.swift */,
 				2E92C55E2167E1F3003CA1E2 /* Repository.swift */,
@@ -144,6 +147,7 @@
 				2E92C55F2167E1F3003CA1E2 /* Repository.swift in Sources */,
 				2E92C5612167E2D6003CA1E2 /* DetailViewController.swift in Sources */,
 				2E92C55B2167D8F6003CA1E2 /* APIService.swift in Sources */,
+				2E92C5632167E57A003CA1E2 /* ProfileView.swift in Sources */,
 				2E92C5492167CF67003CA1E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
