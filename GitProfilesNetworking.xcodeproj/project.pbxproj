@@ -16,7 +16,6 @@
 		2E92C5612167E2D6003CA1E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */; };
 		2E92C5632167E57A003CA1E2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5622167E57A003CA1E2 /* ProfileView.swift */; };
 		2E92C567216944C3003CA1E2 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */; };
-		2E92C56A21694BF2003CA1E2 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C56921694BF2003CA1E2 /* CAGradientLayerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2E92C5622167E57A003CA1E2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
-		2E92C56921694BF2003CA1E2 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */,
-				2E92C56921694BF2003CA1E2 /* CAGradientLayerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,7 +192,6 @@
 				2E92C567216944C3003CA1E2 /* UITableViewExtension.swift in Sources */,
 				2E92C55B2167D8F6003CA1E2 /* APIService.swift in Sources */,
 				2E92C5632167E57A003CA1E2 /* ProfileView.swift in Sources */,
-				2E92C56A21694BF2003CA1E2 /* CAGradientLayerExtension.swift in Sources */,
 				2E92C5492167CF67003CA1E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
