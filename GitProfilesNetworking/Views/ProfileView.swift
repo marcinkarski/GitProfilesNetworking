@@ -5,7 +5,7 @@ class ProfileView: UIView {
     var imageRequest: URLSessionDataTask?
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: .zero)
         self.setup()
     }
     
@@ -23,7 +23,7 @@ class ProfileView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Loading user name..."
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.textColor = .gray
         return label
     }()

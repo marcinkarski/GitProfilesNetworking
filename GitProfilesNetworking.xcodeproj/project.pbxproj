@@ -15,6 +15,8 @@
 		2E92C55F2167E1F3003CA1E2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C55E2167E1F3003CA1E2 /* Repository.swift */; };
 		2E92C5612167E2D6003CA1E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */; };
 		2E92C5632167E57A003CA1E2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5622167E57A003CA1E2 /* ProfileView.swift */; };
+		2E92C567216944C3003CA1E2 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */; };
+		2E92C56A21694BF2003CA1E2 /* CAGradientLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C56921694BF2003CA1E2 /* CAGradientLayerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2E92C55E2167E1F3003CA1E2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2E92C5622167E57A003CA1E2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		2E92C56921694BF2003CA1E2 /* CAGradientLayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +65,58 @@
 			isa = PBXGroup;
 			children = (
 				2E92C5482167CF67003CA1E2 /* AppDelegate.swift */,
-				2E92C54A2167CF67003CA1E2 /* ViewController.swift */,
-				2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */,
-				2E92C5622167E57A003CA1E2 /* ProfileView.swift */,
-				2E92C55A2167D8F6003CA1E2 /* APIService.swift */,
-				2E92C55C2167E1A9003CA1E2 /* Profile.swift */,
-				2E92C55E2167E1F3003CA1E2 /* Repository.swift */,
+				2E92C56B21694C25003CA1E2 /* Controllers */,
+				2E92C56E21694C56003CA1E2 /* Views */,
+				2E92C56C21694C37003CA1E2 /* Networking */,
+				2E92C56D21694C47003CA1E2 /* Models */,
+				2E92C56821694BD4003CA1E2 /* Extensions */,
 				2E92C54F2167CF68003CA1E2 /* Assets.xcassets */,
 				2E92C5542167CF68003CA1E2 /* Info.plist */,
 			);
 			path = GitProfilesNetworking;
+			sourceTree = "<group>";
+		};
+		2E92C56821694BD4003CA1E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */,
+				2E92C56921694BF2003CA1E2 /* CAGradientLayerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2E92C56B21694C25003CA1E2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2E92C54A2167CF67003CA1E2 /* ViewController.swift */,
+				2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2E92C56C21694C37003CA1E2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2E92C55A2167D8F6003CA1E2 /* APIService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2E92C56D21694C47003CA1E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E92C55C2167E1A9003CA1E2 /* Profile.swift */,
+				2E92C55E2167E1F3003CA1E2 /* Repository.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E92C56E21694C56003CA1E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E92C5622167E57A003CA1E2 /* ProfileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +192,10 @@
 				2E92C55D2167E1A9003CA1E2 /* Profile.swift in Sources */,
 				2E92C55F2167E1F3003CA1E2 /* Repository.swift in Sources */,
 				2E92C5612167E2D6003CA1E2 /* DetailViewController.swift in Sources */,
+				2E92C567216944C3003CA1E2 /* UITableViewExtension.swift in Sources */,
 				2E92C55B2167D8F6003CA1E2 /* APIService.swift in Sources */,
 				2E92C5632167E57A003CA1E2 /* ProfileView.swift in Sources */,
+				2E92C56A21694BF2003CA1E2 /* CAGradientLayerExtension.swift in Sources */,
 				2E92C5492167CF67003CA1E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

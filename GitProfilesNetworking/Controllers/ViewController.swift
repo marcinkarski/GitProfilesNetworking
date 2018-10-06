@@ -6,7 +6,7 @@ final class ViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(cellType: UITableViewCell.self)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.delegate = self
         tableView.dataSource = self
@@ -16,6 +16,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        setupNavigationBar()
     }
 }
 
@@ -30,7 +31,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeue(indexPath: indexPath)
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         cell.textLabel?.text = users[indexPath.row]
@@ -47,5 +48,16 @@ extension ViewController: UITableViewDelegate {
         let trimmedName = cellName.filter({ " ".contains($0) == false })
         detailViewController.selectedName = trimmedName.lowercased()
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+private extension ViewController {
+    
+    private func setupNavigationBar() {
+        self.title = "GitHub Profiles"
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = .orange
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
 }

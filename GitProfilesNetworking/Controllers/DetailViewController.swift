@@ -6,18 +6,19 @@ class DetailViewController: UIViewController {
     var tasks = [URLSessionDataTask]()
     var selectedName: String = ""
 
-    let profileView: ProfileView = {
+    private let profileView: ProfileView = {
         let view = ProfileView()
         view.translatesAutoresizingMaskIntoConstraints = false
 //        view.isHidden = true
         return view
     }()
     
-    let activityIndicator: UIActivityIndicatorView = {
+    private let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
         indicator.translatesAutoresizingMaskIntoConstraints = false
-        indicator.style = .gray
+        indicator.style = .whiteLarge
         indicator.startAnimating()
+        indicator.hidesWhenStopped = true
         return indicator
     }()
     
@@ -33,7 +34,7 @@ private extension DetailViewController {
     func setup() {
         view.backgroundColor = .white
         view.addSubview(profileView)
-        view.addSubview(activityIndicator)
+        profileView.addSubview(activityIndicator)
         profileView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         profileView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
