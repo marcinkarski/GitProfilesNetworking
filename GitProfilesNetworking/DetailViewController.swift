@@ -9,7 +9,16 @@ class DetailViewController: UIViewController {
     let profileView: ProfileView = {
         let view = ProfileView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
         return view
+    }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.style = .gray
+        indicator.startAnimating()
+        return indicator
     }()
     
     override func viewDidLoad() {
@@ -17,11 +26,20 @@ class DetailViewController: UIViewController {
         setup()
         fetchUser()
     }
+}
+
+private extension DetailViewController {
     
     func setup() {
         view.backgroundColor = .white
-        profileView.frame = view.frame
         view.addSubview(profileView)
+        view.addSubview(activityIndicator)
+//        profileView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+//        profileView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100).isActive = true
+        profileView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        profileView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     func loadData(withUsername username: String) {
@@ -35,6 +53,8 @@ class DetailViewController: UIViewController {
             switch result {
             case .success(let profile):
                 self?.profileView.configure(with: profile)
+                self?.activityIndicator.stopAnimating()
+                self?.profileView.isHidden = false
             case .failure(let error):
                 print(error.localizedDescription)
             }

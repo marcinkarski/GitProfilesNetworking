@@ -7,19 +7,21 @@ class ProfileView: UIView {
     let imageView: UIImageView = {
         let placeholder = UIImage(named: "bottomViewImagePlaceholder")
         let image = UIImageView(image: placeholder)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
-        image.layer.cornerRadius = 2
-        image.layer.masksToBounds = true
-        return image
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 10
+        return view
     }()
     
     let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Name"
+        label.text = "Loading user..."
         label.font = UIFont.boldSystemFont(ofSize: 14)
-//        label.textColor = .gray
+        label.textColor = .gray
         return label
     }()
     
@@ -30,21 +32,21 @@ class ProfileView: UIView {
     
     fileprivate func setup() {
         backgroundColor = .white
-        layer.cornerRadius = 2
-        layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = 0.5
+//        layer.cornerRadius = 2
+//        layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
+//        layer.shadowOpacity = 0.5
+//        layer.shadowRadius = 0.5
         
         addSubview(imageView)
         addSubview(nameLabel)
         
         imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
-        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-
-        nameLabel.leftAnchor.constraint(equalTo: imageView.leftAnchor, constant: 20).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
+        nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
     }
     
     func reset() {
