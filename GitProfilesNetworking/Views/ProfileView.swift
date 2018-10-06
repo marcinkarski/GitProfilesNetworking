@@ -57,7 +57,9 @@ class ProfileView: UIView {
         imageRequest = service.requestImage(withURL: url) { [weak self] result in
             switch result {
             case .success(let image):
-                self?.imageView.image = image
+                self?.imageView.loadImageUsingCacheWithURLString(profile.avatarURL, placeHolder: nil) { (bool) in
+                    self?.imageView.image = image
+                }
             case .failure(let error):
                 print(error)
             }
