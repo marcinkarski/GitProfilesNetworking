@@ -12,11 +12,20 @@ final class ViewController: UIViewController {
         tableView.dataSource = self
         return tableView
     }()
+    
+    private let refreshControl: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.beginRefreshing()
+        refresh.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        return refresh
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
         setupNavigationBar()
+        tableView.addSubview(refreshControl)
+        
     }
 }
 
@@ -59,5 +68,9 @@ private extension ViewController {
         navigationController?.navigationBar.barTintColor = .orange
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+    }
+    
+    @objc private func refresh(_ sender: Any) {
+        self.refreshControl.endRefreshing()
     }
 }
