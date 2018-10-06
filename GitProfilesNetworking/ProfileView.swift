@@ -4,14 +4,17 @@ class ProfileView: UIView {
     
     var imageRequest: URLSessionDataTask?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setup()
+    }
+    
     let imageView: UIImageView = {
         let placeholder = UIImage(named: "bottomViewImagePlaceholder")
-        let image = UIImageView(image: placeholder)
-        let view = UIImageView()
+        let view = UIImageView(image: placeholder)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.layer.masksToBounds = true
         view.layer.cornerRadius = 10
         return view
     }()
@@ -19,27 +22,16 @@ class ProfileView: UIView {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Loading user..."
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "Loading user name..."
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .gray
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setup()
-    }
-    
     fileprivate func setup() {
         backgroundColor = .white
-//        layer.cornerRadius = 2
-//        layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
-//        layer.shadowOpacity = 0.5
-//        layer.shadowRadius = 0.5
-        
         addSubview(imageView)
         addSubview(nameLabel)
-        
         imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true

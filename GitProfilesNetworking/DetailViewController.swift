@@ -9,7 +9,7 @@ class DetailViewController: UIViewController {
     let profileView: ProfileView = {
         let view = ProfileView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.isHidden = true
+//        view.isHidden = true
         return view
     }()
     
@@ -34,8 +34,6 @@ private extension DetailViewController {
         view.backgroundColor = .white
         view.addSubview(profileView)
         view.addSubview(activityIndicator)
-//        profileView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-//        profileView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100).isActive = true
         profileView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         profileView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -54,7 +52,7 @@ private extension DetailViewController {
             case .success(let profile):
                 self?.profileView.configure(with: profile)
                 self?.activityIndicator.stopAnimating()
-                self?.profileView.isHidden = false
+//                self?.profileView.isHidden = false
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -63,9 +61,8 @@ private extension DetailViewController {
     }
     
     func fetchUser() {
-        let name = selectedName
-        print(selectedName)
         tasks.forEach { $0.cancel() }
-        loadData(withUsername: name)
+        loadData(withUsername: selectedName)
+        print(selectedName)
     }
 }

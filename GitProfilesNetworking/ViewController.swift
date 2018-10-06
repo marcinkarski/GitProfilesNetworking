@@ -1,8 +1,8 @@
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    let users: [String] = ["Marcin Karski", "John Sundell", "Todd Kramer", "James Rochabrun", "Jesse Squires"]
+    private let users: [String] = ["Marcin Karski", "John Sundell", "Todd Kramer", "James Rochabrun", "Jesse Squires"]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
@@ -43,9 +43,9 @@ extension ViewController: UITableViewDelegate {
         let detailViewController = DetailViewController()
         navigationController?.pushViewController(detailViewController, animated: true)
         let cell = tableView.cellForRow(at: indexPath)
-        let captureName = cell?.textLabel?.text
-        let trimmed = captureName?.filter({ " ".contains($0) == false })
-        detailViewController.selectedName = trimmed!.lowercased()
+        guard let cellName = cell?.textLabel?.text else { return }
+        let trimmedName = cellName.filter({ " ".contains($0) == false })
+        detailViewController.selectedName = trimmedName.lowercased()
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
