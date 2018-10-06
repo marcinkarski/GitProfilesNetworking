@@ -2,7 +2,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let users = ["Marcin Karski", "John Sundell", "Todd Kramer"]
+    let users: [String] = ["Marcin Karski", "John Sundell", "Todd Kramer"]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
@@ -15,9 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(tableView)
-        
     }
 }
 
@@ -42,7 +40,12 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailViewController(), animated: true)
+        let detailViewController = DetailViewController()
+        navigationController?.pushViewController(detailViewController, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
+        let captureName = cell?.textLabel?.text
+        let trimmed = captureName?.filter({ " ".contains($0) == false })
+        detailViewController.selectedName = trimmed!
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

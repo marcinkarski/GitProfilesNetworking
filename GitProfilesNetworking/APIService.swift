@@ -11,7 +11,7 @@ enum Result<T> {
 
 class APIService {
     private let session: URLSession
-    init(configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
+    init(configuration: URLSessionConfiguration = .default) {
         self.session = URLSession(configuration: configuration)
     }
     

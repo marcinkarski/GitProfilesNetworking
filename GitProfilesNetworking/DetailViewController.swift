@@ -2,9 +2,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    let baseURL = "https://api.github.com/users/"
+    let base = "https://api.github.com/users/"
     var tasks = [URLSessionDataTask]()
-    
+    var selectedName: String = ""
+
     let profileView: ProfileView = {
         let view = ProfileView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -14,23 +15,21 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        triggerName()
+        fetchUser()
     }
     
     func setup() {
         view.backgroundColor = .white
+        profileView.frame = view.frame
         view.addSubview(profileView)
-        profileView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
-        profileView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
     }
     
     func loadData(withUsername username: String) {
         loadProfile(withUsername: username)
-        print(username)
     }
     
     func loadProfile(withUsername username: String) {
-        guard let url = URL(string: baseURL + username) else { return }
+        guard let url = URL(string: base + username) else { return }
         let service = APIService()
         let task = service.request(url) { [weak self] (result: Result<Profile>) in
             switch result {
@@ -43,8 +42,9 @@ class DetailViewController: UIViewController {
         tasks.append(task)
     }
     
-    func triggerName() {
-        let name = "marcinkarski"
+    func fetchUser() {
+        let name = selectedName
+        print(selectedName)
         tasks.forEach { $0.cancel() }
         loadData(withUsername: name)
     }

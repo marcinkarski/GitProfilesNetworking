@@ -38,9 +38,11 @@ class ProfileView: UIView {
         addSubview(imageView)
         addSubview(nameLabel)
         
-        imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
+        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+
         nameLabel.leftAnchor.constraint(equalTo: imageView.leftAnchor, constant: 20).isActive = true
         nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
     }
