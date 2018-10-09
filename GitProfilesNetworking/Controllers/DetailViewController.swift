@@ -1,8 +1,7 @@
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     
-    let base = "https://api.github.com/users/"
     var tasks = [URLSessionDataTask]()
     var selectedName: String = ""
 
@@ -46,6 +45,13 @@ private extension DetailViewController {
     }
     
     func loadProfile(withUsername username: String) {
+        let base: String = "https://api.github.com/users/"
+//        var components = URLComponents()
+//        components.scheme = "https"
+//        components.host = "api.github.com"
+//        components.path = "/users/"
+//        let base = components.url
+//        guard let url = URL(string: base) else { return }
         guard let url = URL(string: base + username) else { return }
         let service = APIService()
         let task = service.request(url) { [weak self] (result: Result<Profile>) in

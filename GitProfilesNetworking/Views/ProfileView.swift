@@ -1,6 +1,6 @@
 import UIKit
 
-class ProfileView: UIView {
+class ProfileView: UIView, Cachable {
     
     var imageRequest: URLSessionDataTask?
     

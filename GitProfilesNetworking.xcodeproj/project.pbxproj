@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E92C5492167CF67003CA1E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5482167CF67003CA1E2 /* AppDelegate.swift */; };
-		2E92C54B2167CF67003CA1E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C54A2167CF67003CA1E2 /* ViewController.swift */; };
+		2E92C54B2167CF67003CA1E2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C54A2167CF67003CA1E2 /* TableViewController.swift */; };
 		2E92C5502167CF68003CA1E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E92C54F2167CF68003CA1E2 /* Assets.xcassets */; };
 		2E92C55B2167D8F6003CA1E2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C55A2167D8F6003CA1E2 /* APIService.swift */; };
 		2E92C55D2167E1A9003CA1E2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C55C2167E1A9003CA1E2 /* Profile.swift */; };
@@ -17,12 +17,13 @@
 		2E92C5632167E57A003CA1E2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C5622167E57A003CA1E2 /* ProfileView.swift */; };
 		2E92C567216944C3003CA1E2 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */; };
 		2E92C57021695A7A003CA1E2 /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C56F21695A7A003CA1E2 /* Cachable.swift */; };
+		2E92C574216BBD94003CA1E2 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92C573216BBD94003CA1E2 /* UICollectionViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E92C5452167CF67003CA1E2 /* GitProfilesNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitProfilesNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E92C5482167CF67003CA1E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E92C54A2167CF67003CA1E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E92C54A2167CF67003CA1E2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2E92C54F2167CF68003CA1E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E92C5542167CF68003CA1E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E92C55A2167D8F6003CA1E2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		2E92C5622167E57A003CA1E2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		2E92C56F21695A7A003CA1E2 /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		2E92C573216BBD94003CA1E2 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				2E92C566216944C3003CA1E2 /* UITableViewExtension.swift */,
+				2E92C573216BBD94003CA1E2 /* UICollectionViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -87,7 +90,7 @@
 		2E92C56B21694C25003CA1E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2E92C54A2167CF67003CA1E2 /* ViewController.swift */,
+				2E92C54A2167CF67003CA1E2 /* TableViewController.swift */,
 				2E92C5602167E2D6003CA1E2 /* DetailViewController.swift */,
 			);
 			path = Controllers;
@@ -188,7 +191,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E92C54B2167CF67003CA1E2 /* ViewController.swift in Sources */,
+				2E92C574216BBD94003CA1E2 /* UICollectionViewExtension.swift in Sources */,
+				2E92C54B2167CF67003CA1E2 /* TableViewController.swift in Sources */,
 				2E92C55D2167E1A9003CA1E2 /* Profile.swift in Sources */,
 				2E92C55F2167E1F3003CA1E2 /* Repository.swift in Sources */,
 				2E92C5612167E2D6003CA1E2 /* DetailViewController.swift in Sources */,

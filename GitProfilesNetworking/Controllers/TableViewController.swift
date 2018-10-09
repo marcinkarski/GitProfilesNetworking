@@ -1,8 +1,8 @@
 import UIKit
 
-final class ViewController: UIViewController {
+class TableViewController: UIViewController {
     
-    private let users: [String] = ["Marcin Karski", "John Sundell", "Todd Kramer", "James Rochabrun", "Jesse Squires"]
+    public let users: [String] = ["Ash Furrow", "John Sundell", "Todd Kramer", "James Rochabrun", "Jesse Squires"]
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
@@ -12,24 +12,15 @@ final class ViewController: UIViewController {
         tableView.dataSource = self
         return tableView
     }()
-    
-    private let refreshControl: UIRefreshControl = {
-        let refresh = UIRefreshControl()
-        refresh.beginRefreshing()
-        refresh.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
-        return refresh
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
         setupNavigationBar()
-        tableView.addSubview(refreshControl)
-        
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension TableViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -48,19 +39,19 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
-        navigationController?.pushViewController(detailViewController, animated: true)
         let cell = tableView.cellForRow(at: indexPath)
         guard let cellName = cell?.textLabel?.text else { return }
         let trimmedName = cellName.filter({ " ".contains($0) == false })
         detailViewController.selectedName = trimmedName.lowercased()
+        navigationController?.pushViewController(detailViewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-private extension ViewController {
+extension TableViewController {
     
     private func setupNavigationBar() {
         self.title = "GitHub Profiles"
@@ -68,9 +59,5 @@ private extension ViewController {
         navigationController?.navigationBar.barTintColor = .orange
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-    }
-    
-    @objc private func refresh(_ sender: Any) {
-        self.refreshControl.endRefreshing()
     }
 }
